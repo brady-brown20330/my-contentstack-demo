@@ -12,9 +12,18 @@ const SingleBlogPost = (props) => {
 
   return (
     <div className='blog-page'>
-      <div className='banner'>
-      <h1 className='blog-title'>{post[0].banner.blog_title}</h1>
-      <img className='banner-img' src={post[0].banner.banner_image.url}/>
+      <div className='banner' 
+           style={{
+             backgroundImage: `url(${post[0].banner.banner_image.url})`,
+             backgroundSize: '100% auto',
+             backgroundPosition: 'center'
+            //  backgroundRepeat: 'no-repeat'
+            // objectFit: 'cover'
+
+             
+      }}>
+        <h1 className='blog-title'>{post[0].banner.blog_title}</h1>
+        {/* <img className='banner-img' src={post[0].banner.banner_image.url}/> */}
       </div>
       <p className='blog-copy'>{post[0].blog_post_body.copy}</p>
     </div>
