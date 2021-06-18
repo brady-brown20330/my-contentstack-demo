@@ -1,11 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Styles from './App.css'
+import './App.css'
 import Stack from './sdk/entry';
 import Loading from './components/Loading';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BlogPostList from './components/BlogPostList';
+import SingleBlogPost from './components/SingleBlogPost';
+import About from './components/About';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,16 +20,36 @@ class App extends React.Component {
       blogPosts: undefined
     }
   }
-
+/**
+ * To add React.Suspense Header must be included in the Switch, else the app will break on load. 
+ */
   render() {
     console.log(window.location.pathname)
     if (this.state.loading === true) return <Loading text="Loading" />
     return (
-      <div className="app">
+      <Router>
+        <div className="app">
         <Header title={this.state.header.title} subtext={this.state.header.title_subtext}/>
-        <BlogPostList blogPosts={this.state.blogPosts}/>
+        <Switch>
+          <Route 
+            exact path='/' 
+            render={(props) => (
+            <BlogPostList {...props} blogPosts={this.state.blogPosts}/>
+          )} />
+          <Route 
+          path='/posts/'
+          render={(props) => (
+            <SingleBlogPost {...props} blogPosts={this.state.blogPosts}/>
+          )}
+          />
+          <Route 
+          path='/about'
+          component={About}
+          />
+        </Switch>
         <Footer location={this.state.footer.location} social={this.state.footer.social}/>
       </div>
+      </Router>
     )
   }
 
