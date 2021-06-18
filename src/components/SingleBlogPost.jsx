@@ -10,6 +10,7 @@ const SingleBlogPost = (props) => {
   
   if (!post[0]) return <h1>Error 404!</h1>
 
+  let modularPost = post[0].modular_blocks
   return (
     <div className='blog-page'>
       <div className='banner' 
@@ -19,15 +20,15 @@ const SingleBlogPost = (props) => {
       </div>
       <div className='blog-copy'>
         {
-          post[0].modular_blocks.map((item, i) => {
-            console.log(post[0].modular_blocks[i])
-            if (post[0].modular_blocks[i]['paragraph']) {
+          modularPost.map((item, i) => {
+            console.log(modularPost[i])
+            if (modularPost[i]['paragraph']) {
               return (
-                <p>{post[0].modular_blocks[i].paragraph.paragraph_text[0]}</p>
+                <p key={modularPost[i].paragraph._metadata.uid}>{modularPost[i].paragraph.paragraph_text[0]}</p>
               )
-            } else if (post[0].modular_blocks[i]['headers']) {
+            } else if (modularPost[i]['headers']) {
               return (
-                <h2>{post[0].modular_blocks[i].headers.header}</h2>
+                <h2 key={modularPost[i].headers._metadata.uid}>{modularPost[i].headers.header}</h2>
               )
             }
           })}
