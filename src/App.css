@@ -1,10 +1,11 @@
-.app {
+body {
   text-align: center;
 }
 
 /* Header */
 .header-container {
   background-color: lightblue;
+  margin: 1vw;
 }
 
 .header-title {}
@@ -13,16 +14,29 @@
 
 /* Nav */
 nav {
-  background-color: lime;
+  border: groove 1px;
+  background-color: lightsteelblue;
 }
 
-.nav-item {
+.nav-ul {
   list-style-type: none;
-  display: inline;
-  margin: 1vw;
+  margin: 0;
+  padding: 0;  
 }
 
-.nav-link {}
+.nav-li {
+  display: inline-block;
+  margin-left: 1vw;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.nav-link {
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+}
 
 /* BlogPostList */
 .grid {
@@ -34,7 +48,7 @@ nav {
 /* BlogPostTile */
 .tile {
   display: inline-block;
-  background-color: lightsalmon;
+  background-color: floralwhite;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 10px;
@@ -78,6 +92,7 @@ nav {
 /* Footer */
 .footer-container {
   background-color: lightslategray;
+  margin: 1vw;
 }
 
 .social-container {}
