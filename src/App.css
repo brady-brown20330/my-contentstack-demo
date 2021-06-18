@@ -88,6 +88,8 @@ nav {
 .banner {
   height: 25vw;
   background-color: rebeccapurple;
+  background-size: 100% auto;
+  background-position: center;
 }
 
 .blog-title {
