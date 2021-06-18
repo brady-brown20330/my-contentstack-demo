@@ -4,9 +4,9 @@ import Nav from './Nav';
 const Header = (props) => {
 
   return (
-    <div>
-      <h1>{props.title}</h1>
-      <div>{props.subtext}</div>
+    <div className='header-container'>
+      <h1 className='header-title'>{props.title}</h1>
+      <div className='header-subtext'>{props.subtext}</div>
       <Nav />
     </div>
   )

@@ -2,11 +2,25 @@
   text-align: center;
 }
 
+/* Header */
+.header-container {}
+
+.header-title {}
+
+.header-subtext {}
+
+/* Nav */
+.nav-link {}
+
+.nav-item {}
+
+/* BlogPostList */
 .grid {
   display: flex;
   flex-wrap: wrap;
 }
 
+/* BlogPostTile */
 .tile {
   overflow: hidden;
   margin: 10px;
@@ -16,15 +30,26 @@
   border: black solid;
 }
 
-/* .tile-title {} */
-
 .tile-img {
   height: 100px;
 }
 
-/* .tile-copy-preview {} */
+.tile-title {}
+
+.tile-copy-preview {}
+
+.tile-link {}
 
 
-/* .nav-link {}
+/* SingleBlogPost */
 
-.nav-item {} */
+
+
+/* Footer */
+.footer-container {}
+
+.social-container {}
+
+.social-item {}
+
+.social-link {}

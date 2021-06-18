@@ -8,11 +8,15 @@ const SingleBlogPost = (props) => {
   })
 
   console.log('props in the single post: ', post)
+  if (!post[0]) return <h1>Error 404!</h1>
+
   return (
-    <div>
-      <h1>{post[0].banner.blog_title}</h1>
-      <img src={post[0].banner.banner_image.url}/>
-      <p>{post[0].blog_post_body.copy}</p>
+    <div className='blog-page'>
+      <div className='banner'>
+      <h1 className='blog-title'>{post[0].banner.blog_title}</h1>
+      <img className='banner-img' src={post[0].banner.banner_image.url}/>
+      </div>
+      <p className='blog-copy'>{post[0].blog_post_body.copy}</p>
     </div>
   )
 }
