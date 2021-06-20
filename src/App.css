@@ -104,6 +104,28 @@ nav {
 
 .blog-copy {
   margin: 5vw;
+  margin-left: 15vw;
+  margin-right: 15vw;;
+
+}
+
+.blog-paragraph {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.blog-header {
+  justify-content: center;
+}
+
+.blog-image {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+.blog-image:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
 /* Footer */
@@ -115,6 +137,16 @@ nav {
 
 .social-container {}
 
-.social-item {}
+.social-item {
+  display: inline-block;
+  margin-left: 1vw;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
 
-.social-link {}
+.social-link {
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+}

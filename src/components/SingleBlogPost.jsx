@@ -21,14 +21,24 @@ const SingleBlogPost = (props) => {
       <div className='blog-copy'>
         {
           modularPost.map((item, i) => {
-            console.log(modularPost[i])
+            console.log('index of post: ', modularPost[i])
             if (modularPost[i]['paragraph']) {
-              return (
-                <p key={modularPost[i].paragraph._metadata.uid}>{modularPost[i].paragraph.paragraph_text[0]}</p>
+
+              if (Array.isArray(modularPost[i].paragraph.paragraph_text)) {
+                return modularPost[i].paragraph.paragraph_text.map((block) => <p className='blog-paragraph'>{block}</p>)
+              } else {
+                return (
+                <p className='blog-paragraph' key={modularPost[i].paragraph._metadata.uid}>{modularPost[i].paragraph.paragraph_text[0]}</p>
               )
+              }
+              
             } else if (modularPost[i]['headers']) {
               return (
-                <h2 key={modularPost[i].headers._metadata.uid}>{modularPost[i].headers.header}</h2>
+                <h2 className='blog-header' key={modularPost[i].headers._metadata.uid}>{modularPost[i].headers.header}</h2>
+              )
+            } else if (modularPost[i]['image']) {
+              return (
+                <img className='blog-image' key={modularPost[i].image._metadata.uid} src={modularPost[i].image.image.url}/>
               )
             }
           })}
