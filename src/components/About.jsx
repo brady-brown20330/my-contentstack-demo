@@ -2,18 +2,15 @@ import React from 'react';
 
 const About = (props) => {
   console.log('props in about: ', props.about)
-    return props.about.modular_blocks.map((block) => {
-      let header = block.about_me.header
-      let paragraph = block.about_me.about_me
-      let listItems = block.about_me.list_items
+    return props.about.modular_blocks.map((block, index) => {
       
       return (
-        <div>
-          <h1>{header}</h1>
-          <p>{paragraph}</p>
-          <ul>
+        <div className='blog-copy' key={`container_div_${index}`}>
+          <h1 className='blog-header' key={`header_${index}`}>{block.about_me.header}</h1>
+          <p className='blog-paragraph' key={`paragraph_${index}`}>{block.about_me.about_me}</p>
+          <ul key={`list_${index}`}>
             {
-              listItems.map(item => <li>{item}</li>)
+              block.about_me.list_items.map((item, index) => <li key={`listitem_${index}`}>{item}</li>)
             }
           </ul>
         </div>
