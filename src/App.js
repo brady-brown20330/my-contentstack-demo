@@ -17,14 +17,15 @@ class App extends React.Component {
       loading: true,
       header: undefined,
       footer: undefined,
-      blogPosts: undefined
+      blogPosts: undefined,
+      about: undefined
     }
   }
 /**
  * To add React.Suspense Header must be included in the Switch, else the app will break on load. 
  */
   render() {
-    console.log(window.location.pathname)
+    
     if (this.state.loading === true) return <Loading text="Loading" />
     return (
       <Router>
@@ -44,7 +45,9 @@ class App extends React.Component {
           />
           <Route 
           path='/about'
-          component={About}
+          render={(props) => (
+            <About {...props} about={this.state.about} />
+          )}
           />
         </Switch>
         <Footer location={this.state.footer.location} social={this.state.footer.social}/>
@@ -58,10 +61,12 @@ class App extends React.Component {
     const header = await Stack.getEntry("header", "en-us")
     const footer = await Stack.getEntry("footer", "en-us")
     const blogPosts = await Stack.getEntry("blogs", "en-us")
+    const about = await Stack.getEntry("about", "en-us")
     this.setState({
       header: header[0][0],
       footer: footer[0][0],
-      blogPosts: blogPosts[0]
+      blogPosts: blogPosts[0],
+      about: about[0][0]
     })
     // track loading status
     if (this.state.header === undefined) {
@@ -73,7 +78,7 @@ class App extends React.Component {
         loading: false
       })
     }
-    console.log("should be something from contentstack API: ",this.state.blogPosts)
+    console.log("should be something from contentstack API: ",this.state.about)
   }
 
 }

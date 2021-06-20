@@ -6,7 +6,7 @@ const SingleBlogPost = (props) => {
   let post = props.blogPosts.filter((post, i) => {
     return props.blogPosts[i].url === url
   })
-  console.log('One Single Blog Post: ', post[0])
+  // console.log('One Single Blog Post: ', post[0])
   
   if (!post[0]) return <h1>Error 404!</h1>
 
@@ -21,7 +21,7 @@ const SingleBlogPost = (props) => {
       <div className='blog-copy'>
         {
           modularPost.map((item, i) => {
-            console.log('index of post: ', modularPost[i])
+            // console.log('index of post: ', modularPost[i])
             if (modularPost[i]['paragraph']) {
 
               if (Array.isArray(modularPost[i].paragraph.paragraph_text)) {
