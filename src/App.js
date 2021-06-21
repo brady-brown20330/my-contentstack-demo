@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import BlogPostList from './components/BlogPostList';
 import SingleBlogPost from './components/SingleBlogPost';
 import About from './components/About';
+import Projects from './components/Projects';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +19,8 @@ class App extends React.Component {
       header: undefined,
       footer: undefined,
       blogPosts: undefined,
-      about: undefined
+      about: undefined,
+      projects: undefined
     }
   }
 /**
@@ -35,7 +37,11 @@ class App extends React.Component {
           <Route 
             exact path='/' 
             render={(props) => (
-            <BlogPostList {...props} blogPosts={this.state.blogPosts}/>
+            <div>
+              <Projects {...props} projects={this.state.projects}/>
+              <h1>Blog Posts:</h1>
+              <BlogPostList {...props} blogPosts={this.state.blogPosts}/>
+            </div>
           )} />
           <Route 
           path='/posts/'
@@ -62,11 +68,13 @@ class App extends React.Component {
     const footer = await Stack.getEntry("footer", "en-us")
     const blogPosts = await Stack.getEntry("blogs", "en-us")
     const about = await Stack.getEntry("about", "en-us")
+    const projects = await Stack.getEntry("projects", "en-us")
     this.setState({
       header: header[0][0],
       footer: footer[0][0],
       blogPosts: blogPosts[0],
-      about: about[0][0]
+      about: about[0][0],
+      projects: projects[0]
     })
     // track loading status
     if (this.state.header === undefined) {
@@ -78,7 +86,7 @@ class App extends React.Component {
         loading: false
       })
     }
-    console.log("should be something from contentstack API: ",this.state.footer)
+    console.log("should be something from contentstack API: ",this.state.projects)
   }
 
 }
