@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaLinkedin, FaGithub, FaStrava } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = (props) => {
   
@@ -9,11 +11,31 @@ const Footer = (props) => {
       <div className="social-container">
         {
           props.social.social_links.map((link => {
-            return (
-              <div className='social-item' key={link._metadata.uid}>
-                <a className='social-link' href={link.url.href}>{link.title}</a>
-              </div>
-            )
+            if (link.title === 'Linkedin') {
+              return (
+                <div key={`${link.title}_div`} className='social-item'>
+                  <a key={`${link.title}_link`} className='social-link' href={link.url.href} target="_blank">
+                    <FaLinkedin key={`${link.title}_icon`} className='fa-icon' />
+                  </a>
+                </div>
+              )
+            } else if (link.title === 'Github') {
+              return (
+                <div key={`${link.title}_div`} className='social-item'>
+                  <a key={`${link.title}_link`} className='social-link' href={link.url.href} target="_blank">
+                    <FaGithub key={`${link.title}_icon`} className='fa-icon' />
+                  </a>
+                </div>
+              ) 
+            } else if (link.title === 'Strava') {
+              return (
+                <div key={`${link.title}_div`} className='social-item'>
+                  <a key={`${link.title}_link`} className='social-link' href={link.url.href} target="_blank">
+                    <FaStrava key={`${link.title}_icon`} className='fa-icon' />
+                  </a>
+                </div>
+              )
+            }
           }))
         }
       </div>

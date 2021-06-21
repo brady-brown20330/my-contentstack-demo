@@ -140,7 +140,7 @@ nav {
 .social-item {
   display: inline-block;
   margin-left: 1vw;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
   color: black;
 }
@@ -149,4 +149,8 @@ nav {
   text-decoration: none;
   display: block;
   padding: 8px;
+}
+
+.fa-icon {
+  color: #222;
 }
