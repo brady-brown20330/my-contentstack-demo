@@ -38,7 +38,7 @@ const SingleBlogPost = (props) => {
               )
             } else if (modularPost[i]['image']) {
               return (
-                <img className='blog-image' key={modularPost[i].image._metadata.uid} src={modularPost[i].image.image.url}/>
+                <img className='blog-image' key={modularPost[i].image._metadata.uid} src={modularPost[i].image.image.url} alt={`Asset for ${modularPost[i]}`}/>
               )
             }
           })}

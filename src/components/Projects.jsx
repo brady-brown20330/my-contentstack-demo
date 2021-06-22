@@ -7,8 +7,8 @@ const Projects = (props) => {
       {
         props.projects.map((project) => {
           return (
-            <a className='project-tile' href={project.project_link.href} target='_blank'>
-              <img className='project-img' src={project.tile_image.url}/>
+            <a className='project-tile' href={project.project_link.href} target='_blank' rel="noreferrer">
+              <img className='project-img' src={project.tile_image.url} alt={`Asset for ${project.title}`}/>
             </a>
           )
         })

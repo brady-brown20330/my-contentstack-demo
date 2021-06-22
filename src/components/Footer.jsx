@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaLinkedin, FaGithub, FaStrava } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 const Footer = (props) => {
   
@@ -14,7 +13,7 @@ const Footer = (props) => {
             if (link.title === 'Linkedin') {
               return (
                 <div key={`${link.title}_div`} className='social-item'>
-                  <a key={`${link.title}_link`} className='social-link' href={link.url.href} target="_blank">
+                  <a key={`${link.title}_link`} className='social-link' href={link.url.href} target="_blank" rel="noreferrer">
                     <FaLinkedin key={`${link.title}_icon`} className='fa-icon' />
                   </a>
                 </div>
@@ -22,7 +21,7 @@ const Footer = (props) => {
             } else if (link.title === 'Github') {
               return (
                 <div key={`${link.title}_div`} className='social-item'>
-                  <a key={`${link.title}_link`} className='social-link' href={link.url.href} target="_blank">
+                  <a key={`${link.title}_link`} className='social-link' href={link.url.href} target="_blank" rel="noreferrer">
                     <FaGithub key={`${link.title}_icon`} className='fa-icon' />
                   </a>
                 </div>
@@ -30,7 +29,7 @@ const Footer = (props) => {
             } else if (link.title === 'Strava') {
               return (
                 <div key={`${link.title}_div`} className='social-item'>
-                  <a key={`${link.title}_link`} className='social-link' href={link.url.href} target="_blank">
+                  <a key={`${link.title}_link`} className='social-link' href={link.url.href} target="_blank" rel="noreferrer">
                     <FaStrava key={`${link.title}_icon`} className='fa-icon' />
                   </a>
                 </div>
