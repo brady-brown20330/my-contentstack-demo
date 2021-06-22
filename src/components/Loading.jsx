@@ -24,7 +24,7 @@ export default class Loading extends React.Component {
       this.state.content === text + '...'
         ? this.setState({ content: text })
         : this.setState(({ content }) => ({ content: content + '.' }))
-    }, 100)
+    }, 500)
   }
   componentWillUnmount () {
     window.clearInterval(this.interval)
