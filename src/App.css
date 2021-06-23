@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
 body {
   text-align: center;
   height: 100%;
+  font-family: 'Raleway', sans-serif;
+  background-color: #D8F3DC;
+}
+
+h1, h2, h3 {
+  font-family: 'Raleway', sans-serif;
 }
 
 /* .app {
@@ -9,19 +17,23 @@ body {
 
 /* Header */
 .header-container {
-  background-color: lightblue;
+  background-color: #52B788;
   border-radius: 5px;
   /* margin: 1vw; */
 }
 
-.header-title {}
+.header-title {
+  font-family: 'Raleway', sans-serif;
+}
 
-.header-subtext {}
+.header-subtext {
+  font-family: 'Raleway', sans-serif;
+}
 
 /* Nav */
 nav {
   border: groove 1px;
-  background-color: lightsteelblue;
+  background-color: #40916C;
 }
 
 .nav-ul {
@@ -35,13 +47,13 @@ nav {
   margin-left: 1vw;
   font-size: 18px;
   font-weight: bold;
-  color: black;
 }
 
 .nav-link {
   text-decoration: none;
   display: block;
   padding: 8px;
+  color: #222;
 }
 
 /* BlogPostList */
@@ -83,7 +95,11 @@ nav {
 
 .tile-copy-preview {}
 
-.tile-link {}
+.tile-link {
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  color: #222;
+}
 
 /* Projects */
 
@@ -105,7 +121,6 @@ nav {
 
 /* SingleBlogPost */
 .blog-page {
-  font-family: sans-serif;
   background-color: aliceblue;
   color: #222;
 }
@@ -119,6 +134,8 @@ nav {
 
 .blog-title {
   text-align: center;
+  color: aliceblue;
+  background: rgba(0,0,0,0.4);
 }
 
 .banner-img {
@@ -131,11 +148,10 @@ nav {
   margin: 5vw;
   margin-left: 15vw;
   margin-right: 15vw;;
-
 }
 
 .blog-paragraph {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .blog-header {
@@ -143,7 +159,7 @@ nav {
 }
 
 .blog-image {
-  border: 1px solid #ddd;
+  border: 0.5px solid #ddd;
   border-radius: 4px;
   padding: 5px;
   width: 35vw;
@@ -156,7 +172,7 @@ nav {
 /* Footer */
 .footer-container {
   border-radius: 5px;
-  background-color: lightblue;
+  background-color: #52B788;
   margin: 1vw;
 }
 
