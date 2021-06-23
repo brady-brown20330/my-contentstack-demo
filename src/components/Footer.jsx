@@ -5,7 +5,7 @@ const Footer = (props) => {
   
   return (
     <div className='footer-container'>
-      <div>{props.location.address}</div>
+      <div className='footer-text'>{props.location.address}</div>
 
       <div className="social-container">
         {

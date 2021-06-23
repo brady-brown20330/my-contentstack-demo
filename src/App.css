@@ -4,7 +4,7 @@ body {
   text-align: center;
   height: 100%;
   font-family: 'Raleway', sans-serif;
-  background-color: #D8F3DC;
+  background-color: aliceblue;
 }
 
 h1, h2, h3 {
@@ -17,23 +17,25 @@ h1, h2, h3 {
 
 /* Header */
 .header-container {
-  background-color: #52B788;
+  background-color: #2a0f57;
   border-radius: 5px;
   /* margin: 1vw; */
 }
 
 .header-title {
   font-family: 'Raleway', sans-serif;
+  color: aliceblue;
 }
 
 .header-subtext {
   font-family: 'Raleway', sans-serif;
+  color: aliceblue;
 }
 
 /* Nav */
 nav {
   border: groove 1px;
-  background-color: #40916C;
+  background-color: #282535;
 }
 
 .nav-ul {
@@ -53,7 +55,7 @@ nav {
   text-decoration: none;
   display: block;
   padding: 8px;
-  color: #222;
+  color: aliceblue;
 }
 
 /* BlogPostList */
@@ -172,8 +174,12 @@ nav {
 /* Footer */
 .footer-container {
   border-radius: 5px;
-  background-color: #52B788;
+  background-color: #2a0f57;
   margin: 1vw;
+}
+
+.footer-text {
+  color: aliceblue;
 }
 
 .social-container {}
@@ -183,7 +189,7 @@ nav {
   margin-left: 1vw;
   font-size: 24px;
   font-weight: bold;
-  color: black;
+  color: aliceblue;
 }
 
 .social-link {
@@ -193,5 +199,5 @@ nav {
 }
 
 .fa-icon {
-  color: #222;
+  color: aliceblue;
 }

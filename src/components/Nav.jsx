@@ -5,7 +5,7 @@ const Nav= () => {
 
   const activeStyle = {
     color: 'white',
-    backgroundColor: '#1B4332',
+    backgroundColor: '#EB5646',
     // borderTop: 'groove black 1px',
     // borderLeft: 'groove black 1px',
     // borderRight: 'groove black 1px',
