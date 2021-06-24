@@ -86,7 +86,7 @@ class App extends React.Component {
         loading: false
       })
     }
-    console.log("should be something from contentstack API: ",this.state.projects)
+    console.log("ContentstackAPI: ",this.state)
   }
 
 }
