@@ -2,7 +2,7 @@ import React from 'react';
 import { FaLinkedin, FaGithub, FaStrava } from 'react-icons/fa';
 
 const Footer = (props) => {
-  
+  console.log('props in footer: ', props)
   return (
     <div className='footer-container'>
       <div className='footer-text'>{props.location.address}</div>
@@ -38,6 +38,7 @@ const Footer = (props) => {
           }))
         }
       </div>
+      <p className='footer-text' style={{textAlign: 'end', margin: '1vw'}}>{props.copyright.copyright}</p>
     </div>
   )
 }

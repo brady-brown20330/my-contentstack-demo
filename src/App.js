@@ -56,7 +56,7 @@ class App extends React.Component {
           )}
           />
         </Switch>
-        <Footer location={this.state.footer.location} social={this.state.footer.social}/>
+        <Footer location={this.state.footer.location} social={this.state.footer.social} copyright={this.state.footer.copyright}/>
       </div>
       </Router>
     )
