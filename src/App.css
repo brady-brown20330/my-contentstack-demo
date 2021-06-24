@@ -24,11 +24,14 @@ h1, h2, h3 {
 
 .header-title {
   font-family: 'Raleway', sans-serif;
+  font-size: 48px;
   color: aliceblue;
 }
 
 .header-subtext {
   font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  font-size: 18px;
   color: aliceblue;
 }
 
@@ -138,7 +141,7 @@ nav {
 .blog-title {
   text-align: center;
   color: aliceblue;
-  background: rgba(0,0,0,0.4);
+  text-shadow: 2px 2px #222;
 }
 
 .banner-img {
