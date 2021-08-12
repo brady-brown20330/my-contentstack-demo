@@ -25,7 +25,7 @@ const SingleBlogPost = (props) => {
             if (modularPost[i]['paragraph']) {
 
               if (Array.isArray(modularPost[i].paragraph.paragraph_text)) {
-                return modularPost[i].paragraph.paragraph_text.map((block) => <p className='blog-paragraph'>{block}</p>)
+                return modularPost[i].paragraph.paragraph_text.map((block) => <p key={i} className='blog-paragraph'>{block}</p>)
               } else {
                 return (
                 <p className='blog-paragraph' key={modularPost[i].paragraph._metadata.uid}>{modularPost[i].paragraph.paragraph_text[0]}</p>
@@ -37,8 +37,9 @@ const SingleBlogPost = (props) => {
                 <h2 className='blog-header' key={modularPost[i].headers._metadata.uid}>{modularPost[i].headers.header}</h2>
               )
             } else if (modularPost[i]['image']) {
+              console.log(`image information: ${modularPost[i].image._metadata.uid}`)
               return (
-                <img className='blog-image' key={modularPost[i].image._metadata.uid} src={modularPost[i].image.image.url} alt={`Asset for ${modularPost[i]}`}/>
+                <img className='blog-image' key={modularPost[i].image._metadata.uid} src={modularPost[i].image.image.url} alt={modularPost[i].image.image.description}/>
               )
             }
           })}
