@@ -21,7 +21,6 @@ const SingleBlogPost = (props) => {
       <div className='blog-copy'>
         {
           modularPost.map((item, i) => {
-            // console.log('index of post: ', modularPost[i])
             if (modularPost[i]['paragraph']) {
 
               if (Array.isArray(modularPost[i].paragraph.paragraph_text)) {
@@ -37,7 +36,6 @@ const SingleBlogPost = (props) => {
                 <h2 className='blog-header' key={modularPost[i].headers._metadata.uid}>{modularPost[i].headers.header}</h2>
               )
             } else if (modularPost[i]['image']) {
-              console.log(`image information: ${modularPost[i].image._metadata.uid}`)
               return (
                 <img className='blog-image' key={modularPost[i].image._metadata.uid} src={modularPost[i].image.image.url} alt={modularPost[i].image.image.description}/>
               )
