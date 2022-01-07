@@ -1,5 +1,5 @@
 const contentstack = require("contentstack")
-const ContentstackLivePreview = require("@contentstack/live-preview-utils");
+export const ContentstackLivePreview = require("@contentstack/live-preview-utils");
 
 const Stack = contentstack.Stack({
   api_key: process.env.REACT_APP_APIKEY,
@@ -12,8 +12,8 @@ const Stack = contentstack.Stack({
     host: "api.contentstack.io",
   }
 })
-
-ContentstackLivePreview.init({enable: true, stackSdk: Stack});
+Stack.setHost("api.contentstack.io")
+ContentstackLivePreview.init({enable: true, stackSdk: Stack, ssr:false});
 
 export default {
   getEntryWithRef(ctUid, ref, locale) {

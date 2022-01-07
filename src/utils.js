@@ -1,3 +1,3 @@
-const ContentstackLivePreview = require("@contentstack/live-preview-utils");
+// const ContentstackLivePreview = require("@contentstack/live-preview-utils");
 
-export const onEntryChange = ContentstackLivePreview.onEntryChange();
+// export const onEntryChange = ContentstackLivePreview.onEntryChange();
