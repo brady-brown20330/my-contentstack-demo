@@ -12,6 +12,7 @@ const Stack = contentstack.Stack({
     host: "api.contentstack.io",
   }
 })
+
 Stack.setHost("api.contentstack.io")
 ContentstackLivePreview.init({enable: true, stackSdk: Stack, ssr:false});
 
