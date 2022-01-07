@@ -4,7 +4,7 @@ import Nav from './Nav';
 import Axios from 'axios';
 import ContentstackLivePreview from '../sdk/entry'
 
-const onEntryChange = ContentstackLivePreview.onEntryChange();
+const onEntryChange = ContentstackLivePreview.onEntryChange;
 const Header = (props) => {
   const [data, setData] = React.useState({});
 
