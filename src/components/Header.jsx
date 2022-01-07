@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './Nav';
-import { onEntryChange } from "../utils";
+// import { onEntryChange } from "../utils";
 import Axios from 'axios';
 
 const Header = (props) => {
