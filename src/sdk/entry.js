@@ -7,7 +7,7 @@ const Stack = contentstack.Stack({
   environment: process.env.REACT_APP_ENVIRONMENT,
   region: process.env.REACT_APP_REGION ? process.env.REACT_APP_REGION : "us",
   live_preview: {
-    management_token: 'cs4c191d6786e887566cf7e9b9',
+    management_token: process.env.MANAGEMENT_TOKEN,
     enable: true, 
     host: "api.contentstack.io",
   }
