@@ -1,22 +1,22 @@
 const contentstack = require("contentstack")
-export const ContentstackLivePreview = require("@contentstack/live-preview-utils");
-contentstack.Utils.addEditableTags()
+// export const ContentstackLivePreview = require("@contentstack/live-preview-utils");
+// contentstack.Utils.addEditableTags()
 
 const Stack = contentstack.Stack({
   api_key: process.env.REACT_APP_APIKEY,
   delivery_token: process.env.REACT_APP_DELIVERY_TOKEN,
   environment: process.env.REACT_APP_ENVIRONMENT,
   region: process.env.REACT_APP_REGION ? process.env.REACT_APP_REGION : "us",
-  branch: process.env.BRANCH ? process.env.BRANCH : 'production',
-  live_preview: {
-    management_token: process.env.MANAGEMENT_TOKEN,
-    enable: true, 
-    host: "api.contentstack.io",
-  }
+  // branch: process.env.BRANCH ? process.env.BRANCH : 'production',
+  // live_preview: {
+  //   management_token: process.env.MANAGEMENT_TOKEN,
+  //   enable: true, 
+  //   host: "api.contentstack.io",
+  // }
 })
 
-Stack.setHost("api.contentstack.io")
-ContentstackLivePreview.init({enable: true, stackSdk: Stack, ssr:false});
+// Stack.setHost("api.contentstack.io")
+// ContentstackLivePreview.init({enable: true, stackSdk: Stack, ssr:false});
 
 
 
