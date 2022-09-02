@@ -1,11 +1,13 @@
 const contentstack = require("contentstack")
 export const ContentstackLivePreview = require("@contentstack/live-preview-utils");
+contentstack.Utils.addEditableTags()
 
 const Stack = contentstack.Stack({
   api_key: process.env.REACT_APP_APIKEY,
   delivery_token: process.env.REACT_APP_DELIVERY_TOKEN,
   environment: process.env.REACT_APP_ENVIRONMENT,
   region: process.env.REACT_APP_REGION ? process.env.REACT_APP_REGION : "us",
+  branch: process.env.BRANCH ? process.env.BRANCH : 'production',
   live_preview: {
     management_token: process.env.MANAGEMENT_TOKEN,
     enable: true, 
@@ -15,6 +17,8 @@ const Stack = contentstack.Stack({
 
 Stack.setHost("api.contentstack.io")
 ContentstackLivePreview.init({enable: true, stackSdk: Stack, ssr:false});
+
+
 
 export default {
   getEntryWithRef(ctUid, ref, locale) {
@@ -90,5 +94,16 @@ export default {
         }
       )
     })
+  },
+  getContentTypes() {
+    return new Promise((resolve, reject) => {
+    const contentTypes = Stack.getContentTypes({"include_global_field_schema": true})
+    contentTypes
+       .then(function(result) {
+            resolve(result)      
+       }, function(error) {
+            reject(error)
+       })
+      })
   },
 }

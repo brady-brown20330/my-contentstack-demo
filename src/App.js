@@ -6,7 +6,7 @@ import Loading from './components/Loading';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BlogPostList from './components/BlogPostList';
-import SingleBlogPost from './components/SingleBlogPost';
+import {SingleBlogPost} from './components/SingleBlogPost';
 import About from './components/About';
 import Projects from './components/Projects';
 
@@ -66,9 +66,11 @@ class App extends React.Component {
     // use Contentstack sdk to retrieve content types etc. and save them in state
     const header = await Stack.getEntry("header", "en-us")
     const footer = await Stack.getEntry("footer", "en-us")
-    const blogPosts = await Stack.getEntry("blogs", "en-us")
+    const blogPosts = await Stack.getEntry("blogs", "en-us", {"branch": 'development'})
     const about = await Stack.getEntry("about", "en-us")
     const projects = await Stack.getEntry("projects", "en-us")
+    // const data = await Stack.getContentTypes({"include_global_field_schema": true})
+    // console.log('big data thing: ', data);
     this.setState({
       header: header[0][0],
       footer: footer[0][0],
@@ -76,8 +78,9 @@ class App extends React.Component {
       about: about[0][0],
       projects: projects[0]
     })
+    console.log("ContentstackAPI: ",this.state)
     // track loading status
-    if (this.state.header === undefined) {
+    if (this.state.footer === undefined) {
       this.setState({
         loading: true
       })

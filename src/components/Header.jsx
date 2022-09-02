@@ -4,18 +4,18 @@ import  onEntryChange  from "../utils";
 import Axios from 'axios';
 
 const Header = (props) => {
-  const [data, setData] = React.useState({});
+  // const [data, setData] = React.useState({});
 
-  const updateData = () => {
+  // const updateData = () => {
 
-    const fetchedData = Axios.get('https://cdn.contentstack.io/v3/content_types/header/entries/blta059543334da4463?api_key=blta80ffe6a4d78d787&access_token=&environment=production&locale=en-us')
-    setData(fetchedData);
-    console.log('the newness: ', fetchedData)
-  };
+  //   const fetchedData = Axios.get('https://cdn.contentstack.io/v3/content_types/header/entries/blta059543334da4463?api_key=blta80ffe6a4d78d787&access_token=&environment=production&locale=en-us')
+  //   setData(fetchedData);
+  //   console.log('the newness: ', fetchedData)
+  // };
 
-  React.useEffect(() => {
-    onEntryChange(updateData)
-  }, []);
+  // React.useEffect(() => {
+  //   onEntryChange(updateData)
+  // }, []);
 
   return (
     <div className='header-container'>
